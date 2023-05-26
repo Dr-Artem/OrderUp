@@ -37,6 +37,7 @@ body {
     background-color: #f2e3db;
     background-image: url('/src/images/greenleafs.png');
     background-size: contain;
+    background-position: center;
     background-blend-mode: color-dodge;
     color: var(--main-text);
 }
@@ -133,9 +134,4 @@ input {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.map-container {
-    width: 700px;
-    height: 450px;
 }

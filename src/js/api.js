@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:5000/api';
+const URL = 'https://main--chipper-empanada-076b6d.netlify.app';
 
 const api = axios.create({
     baseURL: URL,

@@ -21,6 +21,8 @@ const ShopPage = () => {
         allProducts.then(({ data }) => {
             setProducts(data.products);
         });
+
+        setSelectedRestaurantId(sessionStorage.getItem('selectedRestaurantId'));
     }, []);
 
     const addToCart = product => {
@@ -33,6 +35,7 @@ const ShopPage = () => {
         setCartItems(updatedCartItems);
         sessionStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
         setSelectedRestaurantId(product.restaurantId);
+        sessionStorage.setItem('selectedRestaurantId', product.restaurantId);
     };
 
     const removeFromCart = product => {
@@ -47,6 +50,7 @@ const ShopPage = () => {
             setSelectedRestaurantId(uniqueRestaurantIds[0]);
         } else {
             setSelectedRestaurantId(null);
+            sessionStorage.removeItem('selectedRestaurantId');
         }
     };
 
@@ -54,11 +58,13 @@ const ShopPage = () => {
         <section className={style.shopSection}>
             <div className="container">
                 <div className={style.shopSlider}>
-                    <SideSlider
-                        restaurants={restaurants}
-                        setProducts={setProducts}
-                        selectedRestaurantId={selectedRestaurantId}
-                    />
+                    {restaurants && (
+                        <SideSlider
+                            restaurants={restaurants}
+                            setProducts={setProducts}
+                            selectedRestaurantId={selectedRestaurantId}
+                        />
+                    )}
                 </div>
                 <div className={style.shopContent}>
                     <ul className={style.productList}>
@@ -71,7 +77,7 @@ const ShopPage = () => {
                                         </div>
                                         <p>{product.name}</p>
                                         <div>
-                                            <p>{product.price}</p>
+                                            <p>{product.price} &#8372;</p>
                                             {cartItems.some(item => item._id === product._id) ? (
                                                 <button type="button" onClick={() => removeFromCart(product)}>
                                                     Remove
