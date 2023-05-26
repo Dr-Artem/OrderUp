@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/OrderUp/static/css/main.c59aeb25.css",
+    "main.js": "/OrderUp/static/js/main.2355290b.js",
+    "static/media/greenleafs.png": "/OrderUp/static/media/greenleafs.ca3280844d2d07fb4c2f.png",
+    "index.html": "/OrderUp/index.html",
+    "main.c59aeb25.css.map": "/OrderUp/static/css/main.c59aeb25.css.map",
+    "main.2355290b.js.map": "/OrderUp/static/js/main.2355290b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c59aeb25.css",
+    "static/js/main.2355290b.js"
+  ]
+}
