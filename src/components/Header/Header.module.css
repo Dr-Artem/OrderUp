@@ -1,0 +1,31 @@
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--dark-green);
+    opacity: 0.95;
+    overflow: hidden;
+    -webkit-box-shadow: #333 1px 3px 4px;
+    -moz-box-shadow: #333 1px 3px 4px;
+    box-shadow: #333 1px 3px 4px;
+    padding: 10px;
+}
+.headerNav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.headerAuth {
+    display: flex;
+    align-items: center;
+}
+.headerLink {
+    display: inline-block;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    color: #fafafa;
+    position: relative;
+}

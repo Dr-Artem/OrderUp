@@ -1,0 +1,13 @@
+.shopSection {
+    height: 100%;
+}
+.shopContent {
+    padding: 20px;
+    max-height: 490px;
+    overflow-y: auto;
+}
+.productList {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(4, 1fr);
+}
