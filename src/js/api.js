@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:5000/api';
+const URL = 'https://orderup-frt1.onrender.com/api';
+// const URL = 'http://localhost:5000/api';
 
 const api = axios.create({
     baseURL: URL,
@@ -24,6 +25,10 @@ export class Api {
     };
     allOrders = async () => {
         const { data } = await api.get('/orders');
+        return data;
+    };
+    allOrdersByNumber = async phoneNumber => {
+        const { data } = await api.get(`/orders/${phoneNumber}`);
         return data;
     };
     createOrder = async credentials => {

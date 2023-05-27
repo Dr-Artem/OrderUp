@@ -17,11 +17,6 @@ const ShopPage = () => {
             setRestaurants(data.restaurants);
         });
 
-        const allProducts = variable.allProducts();
-        allProducts.then(({ data }) => {
-            setProducts(data.products);
-        });
-
         setSelectedRestaurantId(sessionStorage.getItem('selectedRestaurantId'));
     }, []);
 
@@ -70,20 +65,28 @@ const ShopPage = () => {
                     <ul className={style.productList}>
                         {products?.map((product, index) => {
                             return (
-                                <li key={index}>
-                                    <div>
-                                        <div>
-                                            <img src={product.imageUrl} alt="" />
-                                        </div>
-                                        <p>{product.name}</p>
-                                        <div>
-                                            <p>{product.price} &#8372;</p>
+                                <li className={style.productItem} key={index}>
+                                    <div className={style.productImageWrapper}>
+                                        <img src={product.imageUrl} alt="" />
+                                    </div>
+                                    <div className={style.productContentWrapper}>
+                                        <p className={style.productName}>{product.name}</p>
+                                        <div className={style.productOrder}>
+                                            <p className={style.productPrice}>{product.price}&#8372;</p>
                                             {cartItems.some(item => item._id === product._id) ? (
-                                                <button type="button" onClick={() => removeFromCart(product)}>
+                                                <button
+                                                    className={style.productBtnRemove}
+                                                    type="button"
+                                                    onClick={() => removeFromCart(product)}
+                                                >
                                                     Remove
                                                 </button>
                                             ) : (
-                                                <button type="button" onClick={() => addToCart(product)}>
+                                                <button
+                                                    className={style.productBtnSubmit}
+                                                    type="button"
+                                                    onClick={() => addToCart(product)}
+                                                >
                                                     Add
                                                 </button>
                                             )}

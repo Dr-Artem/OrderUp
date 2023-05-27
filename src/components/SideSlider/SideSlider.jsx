@@ -16,7 +16,6 @@ const SideSlider = ({ restaurants, setProducts }) => {
     }, [activeIndex]);
 
     const activeIndexHandler = event => {
-        setProducts(null);
         const index = event.realIndex;
         const restaurantId = restaurants[index]._id;
 
@@ -37,17 +36,17 @@ const SideSlider = ({ restaurants, setProducts }) => {
                     : e.slideToClickedSlide();
             }}
             slidesPerView={3}
-            spaceBetween={70}
+            spaceBetween={120}
             centeredSlides={true}
             loop={true}
-            speed={1000}
+            speed={750}
         >
             {restaurants?.map(({ logo, _id }) => {
                 return (
                     <SwiperSlide id={_id} key={_id}>
-                        <div>
-                            <img src={logo} alt="" />
-                        </div>
+                        {/* <div> */}
+                        <img src={logo} alt="" />
+                        {/* </div> */}
                     </SwiperSlide>
                 );
             })}

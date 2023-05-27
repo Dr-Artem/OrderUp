@@ -1,0 +1,24 @@
+.phoneInputWrapper {
+    position: relative;
+}
+.phoneInput {
+    padding: 8px 16px;
+    width: 100%;
+    outline: none;
+    border-radius: 8px;
+    border: 2px solid var(--regular-green);
+}
+.phoneSubmitBtn {
+    padding: 10px 24px;
+    background-color: var(--regular-green);
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+}
+.phoneSubmitBtn:hover {
+    background-color: var(--dark-green);
+}

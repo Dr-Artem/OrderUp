@@ -6,7 +6,7 @@
     --regular-green: #41644a;
     --background: #f2e3db;
     --accent: #e86a33;
-    --accent-light: #d9815c;
+    --accent-light: #fc8c5d;
     --shadow: #c6bfb7;
 
     --regular-font-weight: 400;
@@ -15,13 +15,6 @@
     --bold-font-weight: 700;
 
     --general-transition-effect: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    /* responsiveness */
-    /* --pre-mobile: 374.98px;
-    --mobile: 375px;
-    --pre-tablet: 767.98px;
-    --tablet: 768px;
-    --pre-desktop: 1439.98px;
-    --desktop: 1440px; */
 }
 
 html {
@@ -92,7 +85,7 @@ input {
     margin: 0 auto;
 }
 .container {
-    padding: 48px 20px;
+    padding: 40px 20px;
 }
 .section {
     padding: 64px 0;
@@ -101,8 +94,7 @@ input {
 .swiper {
     width: 100%;
     height: 100%;
-    padding: 0 16px;
-    padding-bottom: 22px;
+    margin-bottom: 40px;
 }
 .swiper-wrapper {
     align-items: center;
@@ -111,8 +103,7 @@ input {
     position: relative;
     background: var(--regular-green);
     display: flex;
-    padding: 18px;
-    height: 170px;
+    height: 120px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -129,9 +120,30 @@ input {
 }
 
 .swiper-slide img {
-    max-width: 130px;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100px;
+    /* display: block; */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* object-fit: cover; */
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #f1f1f1;
+}
+
+/* Стилізація треку скроллбара */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Стилізація ковзачка скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-light);
+    border-radius: 4px;
+}
+
+/* Стилізація кнопок скроллбара */
+::-webkit-scrollbar-button {
+    display: none;
 }

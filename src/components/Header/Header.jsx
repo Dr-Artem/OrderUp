@@ -18,6 +18,11 @@ const Header = () => {
                         Shopping Cart
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink to="/history" className={style.headerLink}>
+                        History
+                    </NavLink>
+                </li>
             </ul>
             <ul className={style.headerAuth}>
                 <li>

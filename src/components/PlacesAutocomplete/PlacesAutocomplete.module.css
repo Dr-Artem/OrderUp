@@ -1,0 +1,34 @@
+.orderAdressContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.orderInputAdress {
+    padding: 8px 16px;
+    outline: none;
+    border-radius: 8px;
+    border: 2px solid var(--regular-green);
+}
+.orderInputAdress:focus,
+.orderInputAdress:active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.orderAdressList {
+    border: 2px solid var(--regular-green);
+    border-top: none;
+    background-color: #ffffff;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.orderAdressItem {
+    padding: 0 16px;
+    cursor: pointer;
+}
+
+.orderAdressItem:hover {
+    background-color: #e1e4e8;
+}
