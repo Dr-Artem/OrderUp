@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/OrderUp/static/css/main.c59aeb25.css",
-    "main.js": "/OrderUp/static/js/main.3a1b4036.js",
+    "main.css": "/OrderUp/static/css/main.8c47e58e.css",
+    "main.js": "/OrderUp/static/js/main.64bc96e9.js",
     "static/media/greenleafs.png": "/OrderUp/static/media/greenleafs.ca3280844d2d07fb4c2f.png",
     "index.html": "/OrderUp/index.html",
-    "main.c59aeb25.css.map": "/OrderUp/static/css/main.c59aeb25.css.map",
-    "main.3a1b4036.js.map": "/OrderUp/static/js/main.3a1b4036.js.map"
+    "main.8c47e58e.css.map": "/OrderUp/static/css/main.8c47e58e.css.map",
+    "main.64bc96e9.js.map": "/OrderUp/static/js/main.64bc96e9.js.map"
   },
   "entrypoints": [
-    "static/css/main.c59aeb25.css",
-    "static/js/main.3a1b4036.js"
+    "static/css/main.8c47e58e.css",
+    "static/js/main.64bc96e9.js"
   ]
 }
