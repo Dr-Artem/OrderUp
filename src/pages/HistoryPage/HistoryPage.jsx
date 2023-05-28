@@ -1,3 +1,5 @@
+import SearchIcon from '@mui/icons-material/Search';
+import { IconButton } from '@mui/material';
 import { useFormik } from 'formik';
 import { Api } from 'js/api';
 import { useState } from 'react';
@@ -34,8 +36,9 @@ const HistoryPage = () => {
     };
 
     return (
-        <>
-            <form onSubmit={formik.handleSubmit}>
+        <section className={style.historySection}>
+            <form className={style.historyForm} onSubmit={formik.handleSubmit}>
+                <p className={style.historyTitle}>Find your orders by phone number</p>
                 <div className={style.phoneInputWrapper}>
                     <input
                         className={style.phoneInput}
@@ -51,13 +54,20 @@ const HistoryPage = () => {
                     {formik.touched.phone && formik.errors.phone ? (
                         <div className={style.helperText}>{formik.errors.phone}</div>
                     ) : null}
+                    <IconButton
+                        type="submit"
+                        disableRipple
+                        sx={{ color: 'var(--dark-green)', position: 'absolute', right: '4px', top: '' }}
+                    >
+                        <SearchIcon sx={{ width: '28px', height: '28px' }} />
+                    </IconButton>
+                    {/* <button className={style.phoneSubmitBtn} type="submit">
+                        Submit
+                    </button> */}
                 </div>
-                <button className={style.phoneSubmitBtn} type="submit">
-                    Submit
-                </button>
             </form>
             <HistoryList orders={orders} />
-        </>
+        </section>
     );
 };
 export default HistoryPage;

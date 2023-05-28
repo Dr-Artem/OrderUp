@@ -67,15 +67,15 @@ const HistoryList = ({ orders }) => {
                             <Box
                                 sx={{
                                     display: 'flex',
+                                    columnGap: '16px',
                                     rowGap: '32px',
-                                    justifyContent: 'space-between',
                                     flexWrap: 'wrap',
                                 }}
                             >
                                 {products.map(({ product, quantity }) => {
                                     return (
                                         <Box
-                                            style={{ display: 'flex', flexBasis: 'calc((100% - (16px * 2)) / 3)' }}
+                                            style={{ display: 'flex', maxWidth: '450px', width: '100%' }}
                                             key={product._id}
                                         >
                                             <img

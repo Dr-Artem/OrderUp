@@ -1,24 +1,37 @@
+.historySection {
+    padding: 40px 0;
+}
+.historyForm {
+    max-width: 700px;
+    margin: 0 auto 16px auto;
+}
+.historyTitle {
+    text-align: center;
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 500;
+    letter-spacing: 0.02rem;
+    margin-bottom: 16px;
+}
+
 .phoneInputWrapper {
     position: relative;
+    gap: 16px;
 }
 .phoneInput {
-    padding: 8px 16px;
+    padding: 8px 40px 8px 16px;
     width: 100%;
     outline: none;
     border-radius: 8px;
     border: 2px solid var(--regular-green);
+    text-align: center;
+    letter-spacing: 0.04rem;
+    font-size: 20px;
+    font-weight: 500;
 }
-.phoneSubmitBtn {
-    padding: 10px 24px;
-    background-color: var(--regular-green);
-    border: none;
-    border-radius: 10px;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 19px;
-    text-transform: uppercase;
-}
-.phoneSubmitBtn:hover {
-    background-color: var(--dark-green);
+.helperText {
+    position: absolute;
+    bottom: -15px;
+    font-size: 12px;
+    font-weight: 700;
 }

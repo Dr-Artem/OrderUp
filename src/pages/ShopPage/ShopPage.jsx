@@ -37,13 +37,7 @@ const ShopPage = () => {
         const filteredItems = cartItems.filter(item => item._id !== product._id);
         setCartItems(filteredItems);
         sessionStorage.setItem('cartItems', JSON.stringify(filteredItems));
-
-        const remainingRestaurantIds = filteredItems.map(item => item.restaurantId);
-        const uniqueRestaurantIds = [...new Set(remainingRestaurantIds)];
-
-        if (uniqueRestaurantIds.length === 1) {
-            setSelectedRestaurantId(uniqueRestaurantIds[0]);
-        } else {
+        if (filteredItems.length === 0) {
             setSelectedRestaurantId(null);
             sessionStorage.removeItem('selectedRestaurantId');
         }

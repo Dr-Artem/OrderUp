@@ -62,7 +62,7 @@ const CartPage = () => {
             address: address,
             products: cartItems.map(({ _id }) => ({
                 product: _id,
-                quantity: values[Object.keys(values).find(key => key === _id)],
+                quantity: values[_id],
             })),
             total: totalPrice,
         };
@@ -85,13 +85,7 @@ const CartPage = () => {
         const filteredItems = cartItems.filter(item => item._id !== product._id);
         setCartItems(filteredItems);
         sessionStorage.setItem('cartItems', JSON.stringify(filteredItems));
-
-        const remainingRestaurantIds = filteredItems.map(item => item.restaurantId);
-        const uniqueRestaurantIds = [...new Set(remainingRestaurantIds)];
-
-        if (uniqueRestaurantIds.length === 1) {
-            return;
-        } else {
+        if (filteredItems.length === 0) {
             sessionStorage.removeItem('selectedRestaurantId');
         }
     };
