@@ -2,7 +2,6 @@
   "name": "OrderUp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Dr-Artem.github.io/OrderUp/",
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
