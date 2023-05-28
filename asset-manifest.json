@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/OrderUp/static/css/main.bf43eb65.css",
-    "main.js": "/OrderUp/static/js/main.a933a24d.js",
-    "static/media/greenleafs.png": "/OrderUp/static/media/greenleafs.ca3280844d2d07fb4c2f.png",
-    "index.html": "/OrderUp/index.html",
-    "main.bf43eb65.css.map": "/OrderUp/static/css/main.bf43eb65.css.map",
-    "main.a933a24d.js.map": "/OrderUp/static/js/main.a933a24d.js.map"
+    "main.css": "/static/css/main.7bb55044.css",
+    "main.js": "/static/js/main.0a073ebf.js",
+    "static/media/greenleafs.png": "/static/media/greenleafs.ca3280844d2d07fb4c2f.png",
+    "index.html": "/index.html",
+    "main.7bb55044.css.map": "/static/css/main.7bb55044.css.map",
+    "main.0a073ebf.js.map": "/static/js/main.0a073ebf.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf43eb65.css",
-    "static/js/main.a933a24d.js"
+    "static/css/main.7bb55044.css",
+    "static/js/main.0a073ebf.js"
   ]
 }
