@@ -1,4 +1,4 @@
-# OrderUp Frontend https://reliable-zuccutto-ccdbbb.netlify.app/
+# OrderUp Frontend [ https://reliable-zuccutto-ccdbbb.netlify.app/](https://earnest-manatee-a85f0b.netlify.app/)
 
 Це фронтенд додатку для доставки їжі з магазинів.
 
