@@ -2,6 +2,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { IconButton } from '@mui/material';
 import { useFormik } from 'formik';
 import { Api } from 'js/api';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { useState } from 'react';
 import * as yup from 'yup';
 
@@ -29,10 +30,12 @@ const HistoryPage = () => {
 
     const handleSubmitForm = values => {
         const phoneNumber = values.phone;
+        Loading.standard('Loading...');
         const allOrdersByNumber = variable.allOrdersByNumber(phoneNumber);
         allOrdersByNumber.then(({ data }) => {
             setOrders(data.orders);
         });
+        Loading.remove();
     };
 
     return (

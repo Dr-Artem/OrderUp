@@ -6,30 +6,49 @@ const Header = () => {
         <header className={style.header}>
             <ul className={style.headerNav}>
                 {/* <li>
-                    <NavLink className={style.headerLink}>OrderUp</NavLink>
+                    <NavLink className={({ isActive }) => (isActive ? `${style.active}` : `${style.headerLink}`)}>OrderUp</NavLink>
                 </li> */}
                 <li>
-                    <NavLink to="/shop" className={style.headerLink}>
+                    <NavLink
+                        to="/shop"
+                        className={({ isActive }) => (isActive ? `${style.active}` : `${style.headerLink}`)}
+                    >
                         Shop
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/cart" className={style.headerLink}>
+                    <NavLink
+                        to="/cart"
+                        className={({ isActive }) => (isActive ? `${style.active}` : `${style.headerLink}`)}
+                    >
                         Shopping Cart
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/history" className={style.headerLink}>
+                    <NavLink
+                        to="/history"
+                        className={({ isActive }) => (isActive ? `${style.active}` : `${style.headerLink}`)}
+                    >
                         History
                     </NavLink>
                 </li>
             </ul>
             <ul className={style.headerAuth}>
                 <li>
-                    <NavLink className={style.headerLink}>Log In</NavLink>
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) => (isActive ? `${style.active}` : `${style.headerLink}`)}
+                    >
+                        Log In
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink className={style.headerLink}>Sign up</NavLink>
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) => (isActive ? `${style.active}` : `${style.headerLink}`)}
+                    >
+                        Sign up
+                    </NavLink>
                 </li>
             </ul>
         </header>

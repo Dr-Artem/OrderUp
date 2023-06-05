@@ -1,5 +1,8 @@
+import { UilEllipsisH, UilTimes } from '@iconscout/react-unicons';
 import SideSlider from 'components/SideSlider/SideSlider';
 import { Api } from 'js/api';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useEffect, useState } from 'react';
 import style from './ShopPage.module.css';
 
@@ -10,11 +13,14 @@ const ShopPage = () => {
     const [restaurants, setRestaurants] = useState();
     const [selectedRestaurantId, setSelectedRestaurantId] = useState(null);
     const [products, setProducts] = useState();
+    const [indexHandler, setIndexHandler] = useState(null);
 
     useEffect(() => {
         const allRestaurants = variable.allRestaurants();
+        Loading.standard('Loading...');
         allRestaurants.then(({ data }) => {
             setRestaurants(data.restaurants);
+            Loading.remove();
         });
 
         setSelectedRestaurantId(sessionStorage.getItem('selectedRestaurantId'));
@@ -22,7 +28,7 @@ const ShopPage = () => {
 
     const addToCart = product => {
         if (selectedRestaurantId && product.restaurantId !== selectedRestaurantId) {
-            alert('Cannot add products from different restaurants.');
+            Notify.failure('For order you can only choose from the current restaurant');
             return;
         }
 
@@ -46,22 +52,43 @@ const ShopPage = () => {
     return (
         <section className={style.shopSection}>
             <div className="container">
-                <div className={style.shopSlider}>
-                    {restaurants && (
-                        <SideSlider
-                            restaurants={restaurants}
-                            setProducts={setProducts}
-                            selectedRestaurantId={selectedRestaurantId}
-                        />
-                    )}
-                </div>
+                {restaurants && (
+                    <SideSlider
+                        restaurants={restaurants}
+                        setProducts={setProducts}
+                        selectedRestaurantId={selectedRestaurantId}
+                        setIndexHandler={setIndexHandler}
+                    />
+                )}
                 <div className={style.shopContent}>
                     <ul className={style.productList}>
                         {products?.map((product, index) => {
                             return (
                                 <li className={style.productItem} key={index}>
                                     <div className={style.productImageWrapper}>
-                                        <img src={product.imageUrl} alt="" />
+                                        <button
+                                            onClick={() => setIndexHandler(index)}
+                                            type="button"
+                                            className={style.productInfoBtn}
+                                        >
+                                            <UilEllipsisH />
+                                        </button>
+                                        <div
+                                            className={style.productInfoTextWrapper}
+                                            style={{
+                                                top: indexHandler === index ? '0%' : '100%',
+                                            }}
+                                        >
+                                            <button
+                                                onClick={() => setIndexHandler(null)}
+                                                type="button"
+                                                className={style.productInfoCloseBtn}
+                                            >
+                                                <UilTimes />
+                                            </button>
+                                            <p className={style.productInfoText}>{product.description}</p>
+                                        </div>
+                                        <img src={product.imageUrl} style={{ width: '100%' }} alt="" />
                                     </div>
                                     <div className={style.productContentWrapper}>
                                         <p className={style.productName}>{product.name}</p>
